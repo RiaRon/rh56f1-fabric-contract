@@ -6,6 +6,8 @@
 
 로컬 구현 커밋: sim2real/feature/rh56f1-fabric-contract@8f7888a
 
+공개 저장소 초기 스냅샷 커밋: e205324472a828dad6bcc7518d0f592e6f4f1d53
+
 ## 목적과 범위
 
 RH56F1 Fabric을 실기 배포 경로에서 사용할 수 있도록 다음 두 항목만 구현한다.
