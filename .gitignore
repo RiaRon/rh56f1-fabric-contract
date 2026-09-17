@@ -1,0 +1,37 @@
+build/
+install/
+log/
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.tmp
+
+# Local upstream checkout; keep it on disk but never add it to this repo.
+vendor/openarm/openarm_teleop/
+
+# 배포 파이썬 환경(setup_deploy_env.sh 로 재생성)
+.venv/
+
+# 구운 rosbag2 (npz 에서 action_bag.py 로 언제든 재생성 — 커밋하지 않는다)
+logs/shadow/*.bag/
+
+# rosbag2 원본 (수백 MB~GB). 판정 결과는 docs/ 와 분석 CSV 로 남는다
+logs/rosbags/
+logs/shadow/rosbags/
+
+# 정책 체크포인트 바이너리 — 진실원천은 hdgp/log/. 여기엔 params dump 와 README 만 둔다
+logs/policy/**/*.pth
+
+# 미션 실행 기록 (state.json/jsonl/pids) — 런타임 상태이지 산출물이 아니다
+logs/mission/
+
+# policy_control 실행 로그 (fake plant·체인 리코더 npz/csv/log, 197MB+) —
+# 판정 결과는 docs/ 와 tests/fixtures/ 의 골든에 남는다
+logs/policy_control/
+
+# 실기 라운드 rosbag2 (수 GB). 판정·분석 결과는 docs/ 와 npz 트레이스로 남는다
+logs/bags/
+
+# 정책 가중치 — 배포 스냅샷은 md5 로 문서에 못 박고 파일은 커밋하지 않는다
+logs/policy/**/nn/*.pth
